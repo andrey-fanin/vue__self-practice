@@ -7,18 +7,16 @@
     <title>Основы Vue</title>
     <link rel='stylesheet' href="theme.css" />
 </head>
-<body>
-    
-    <div class="container pt-5">
+<body>    
+    <div class="container pt-5" id="app">
         <div class="card center">
-            <h1>Counter: 0</h1>
+            <h1>{{ counterTitle }}: {{ counter }}</h1>
             <div>
-                <button class="btn primary">Increase</button>
-                <button class="btn danger">Decrease</button>
+                <button class="btn primary" v-on:click='counter++'>Increase</button>
+                <button class="btn danger" v-on:click='counter--'>Decrease</button>
             </div>
         </div>
     </div>
-
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
 </body>
