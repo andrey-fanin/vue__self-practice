@@ -20,11 +20,18 @@
             <h2 v-once>{{ title }}</h2>
             <h2 v-pre>{{ title }}</h2>
             <button class="btn" @click='title = "New title"'>click</button> -->
-            <ul class="list">
+            <ul class="list" v-if='items.length'>
                 <!-- <li class="list-item" v-for='item in 7'>{{ item }}</li> -->
                 <!-- цикл может работать и без массива -->
-                <li class="list-item" v-for='(value, key) in person'><strong>{{key}}</strong>{{ value }}</li>
+                <!-- <li class="list-item" v-for='(value, key) in person'><strong>{{key}}</strong>{{ value }}</li> -->
+                <li 
+                class="list-item" 
+                v-for='(item, i) in items'
+                @click='items.splice(i, 1)'
+                >
+                <strong>{{ item }}</strong></li>
             </ul>
+            <h3 v-show='items.length === 0'>Nothing here </h3>
         </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>

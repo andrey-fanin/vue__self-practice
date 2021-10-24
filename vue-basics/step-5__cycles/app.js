@@ -6,6 +6,7 @@ Vue.createApp({
             firstName: 'Andrey',
             lastName: 'Fanin',
             age: 25
-        }
+        },
+        items: [1, 2, 3, 4, 5, 6]        
     })
 }).mount('#app')
